@@ -1057,7 +1057,6 @@ document.title = &quot;Combat Felines | Dumb Luck Interactive&quot;;
 &lt;div id=&quot;player-name&quot;&gt;&lt;h1&gt;$player.name&lt;/h1&gt;&lt;/div&gt;\
 &lt;&lt;if visited(&quot;transition-apprentice-01&quot;)&gt;&gt;Role: $player.role&lt;&lt;/if&gt;&gt;
 Rank: $player.rank
-
 Pronouns: &lt;&lt;listbox &quot;$player.theyNew&quot;&gt;&gt;
 	&lt;&lt;option &quot;they&quot; &quot;they&quot; `$player.theyNew is &quot;they&quot; ? &quot;selected&quot; : &quot;&quot;`&gt;&gt;
 	&lt;&lt;option &quot;she&quot; &quot;she&quot; `$player.theyNew is &quot;she&quot; ? &quot;selected&quot; : &quot;&quot;`&gt;&gt;
@@ -1874,10 +1873,8 @@ You hear a wave of purrs from the crowd, and realize now&#39;s your time to shin
 
 &quot;It gives me great pride to let you all know that Apprentices, as of today, are all fully fledged members of the clan. Combat cats, medicine cats, and leaders! What a great day!&quot;
 
-The crowd purrs and clicks with delight, smiling at all the apprentices.
 The crowd purrs and clicks with delight, chanting the names of the newly appointed cats. 
 
-Among other names, you hear them chant &lt;i&gt;$player.name&lt;/i&gt;! And you [[couldn&#39;t be happier...|LeaderMissing]]
 Among other names, you hear them chant &lt;i&gt;$player.name&lt;/i&gt;, And you [[couldn&#39;t be happier...|NE-What-do-we-do]]
 &lt;&lt;masteraudio stop&gt;&gt;&lt;&lt;audio &quot;BGM_cats&quot; volume 0.05 play loop&gt;&gt;\</tw-passagedata><tw-passagedata pid="69" name="apprentice-training-02-medicine" tags="medicine" position="1400,3700" size="200,100">&lt;&lt;set $finished to 0&gt;&gt;\
 $clan.medicine.name leads you to the medicine cat den. $clan.medicine.They sit$clan.medicine.s near a pile of medicinal materials, and looks at you seriously.
@@ -2071,32 +2068,17 @@ You nod enthusastically.
 &lt;&lt;print &#39;[[...&#39; + $clan.warriors[0].name + &#39;!|apprentice-training-02-leader-incorrect]]&#39;&gt;&gt;
 &lt;&lt;print &#39;[[...&#39; + $clan.warriors[2].name + &#39;!|apprentice-training-02-leader-correct][$player.leader to $player.leader + 2]]&#39;&gt;&gt;
 &lt;&lt;print &#39;[[...&#39; + $clan.warriors[1].name + &#39;!|apprentice-training-02-leader-incorrect]]&#39;&gt;&gt;
-</tw-passagedata><tw-passagedata pid="71" name="apprentice-training-02-medicine-correct" tags="" position="1375,3825" size="100,100">&quot;Well done!&quot; $clan.medicine.name pats you on the back with $clan.medicine.their tail. &quot;That was particularly difficult... I remember having trouble with that when I was an apprentice. You&#39;re already doing so well! Go ahead, take a rest [[around camp|camp-03][$randomApprenticeEvent to $apprenticeEvents.pluck()]].&quot;</tw-passagedata><tw-passagedata pid="72" name="apprentice-training-02-medicine-incorrect" tags="" position="1525,3825" size="100,100">&quot;That&#39;s all right. I remember having trouble with that when I was an apprentice, too. Don&#39;t feel bad-- why don&#39;t you take some time off and go see what&#39;s going on [[around camp|camp-03][$randomApprenticeEvent to $apprenticeEvents.pluck()]]?&quot;</tw-passagedata><tw-passagedata pid="73" name="apprentice-training-02-leader-correct" tags="" position="1675,3825" size="100,100">&quot;Woah, yeah... That&#39;s what I got too! Thanks so much for your help. Why not go see what&#39;s happening [[around camp|camp-03][$randomApprenticeEvent to $apprenticeEvents.pluck()]]?&quot;</tw-passagedata><tw-passagedata pid="74" name="apprentice-training-02-leader-incorrect" tags="" position="1825,3825" size="100,100">&quot;Uh... No, I don&#39;t think... I don&#39;t think that&#39;s right. I think I&#39;ll figure it out myself though. Why don&#39;t you go for a walk or something? There might be something happening [[around camp|camp-03][$randomApprenticeEvent to $apprenticeEvents.pluck()]].&quot;</tw-passagedata><tw-passagedata pid="75" name="LeaderMissing" tags="" position="1450,4600" size="100,100">&lt;&lt;set $clan.leader.status to &quot;missing&quot;&gt;&gt;\
 </tw-passagedata><tw-passagedata pid="71" name="apprentice-training-02-medicine-correct" tags="" position="1375,3825" size="100,100">&quot;Well done!&quot; $clan.medicine.name pats you on the back with $clan.medicine.their tail. &quot;That was particularly difficult... I remember having trouble with that when I was an apprentice. You&#39;re already doing so well! Go ahead, take a rest [[around camp|camp-03][$randomApprenticeEvent to $apprenticeEvents.pluck()]].&quot;</tw-passagedata><tw-passagedata pid="72" name="apprentice-training-02-medicine-incorrect" tags="" position="1525,3825" size="100,100">&quot;That&#39;s all right. I remember having trouble with that when I was an apprentice, too. Don&#39;t feel bad-- why don&#39;t you take some time off and go see what&#39;s going on [[around camp|camp-03][$randomApprenticeEvent to $apprenticeEvents.pluck()]]?&quot;</tw-passagedata><tw-passagedata pid="73" name="apprentice-training-02-leader-correct" tags="" position="1675,3825" size="100,100">&quot;Woah, yeah... That&#39;s what I got too! Thanks so much for your help. Why not go see what&#39;s happening [[around camp|camp-03][$randomApprenticeEvent to $apprenticeEvents.pluck()]]?&quot;</tw-passagedata><tw-passagedata pid="74" name="apprentice-training-02-leader-incorrect" tags="" position="1825,3825" size="100,100">&quot;Uh... No, I don&#39;t think... I don&#39;t think that&#39;s right. I think I&#39;ll figure it out myself though. Why don&#39;t you go for a walk or something? There might be something happening [[around camp|camp-03][$randomApprenticeEvent to $apprenticeEvents.pluck()]].&quot;</tw-passagedata><tw-passagedata pid="75" name="NE-What-do-we-do" tags="" position="1400,4550" size="200,200">&lt;&lt;set $clan.leader.status to &quot;missing&quot;&gt;&gt;\
 &lt;&lt;set $clan.deputy.status to &quot;missing&quot;&gt;&gt;\
 &lt;&lt;set $clan.warriors[0].status to &quot;missing&quot;&gt;&gt;\
 &lt;&lt;set $clan.warriors[1].status to &quot;missing&quot;&gt;&gt;\
 &lt;&lt;set $clan.warriors[2].status to &quot;missing&quot;&gt;&gt;\
-You have been a $player.role&lt;&lt;if $player.role is &quot;medicine&quot; or $player.role is &quot;combat&quot;&gt;&gt; cat&lt;&lt;/if&gt;&gt; for about a moon now, and tension has been rising in the clan. Strange sightings of large beasts roaming the territory have put most cats on edge, and $clan.leader.name announced that $clan.leader.they would be taking $clan.deputy.name to investigate the territory with a few warriors.
 A few weeks go by, and now you&#39;ve been a $player.role&lt;&lt;if $player.role is &quot;medicine&quot; or $player.role is &quot;combat&quot;&gt;&gt; cat&lt;&lt;/if&gt;&gt; for about a moon now.
 
-It has been a few days since they left, so you consider...
-&lt;&lt;if $player.role is &quot;leader&quot;&gt;&gt;
-[[...investigating. |NewDeputy_Elect]]
-[[...asking the Gods for an omen. |NewDeputy_Elect]]
-[[...waiting a little longer|NewDeputy_Elect]]
-&lt;&lt;else&gt;&gt;
-[[...investigating. |LeaderMissing_Investigate]]
-[[...asking the Gods for an omen. |LeaderMissing_Omens]]
-[[...waiting a little longer|LeaderMissing_Wait]]
-&lt;&lt;/if&gt;&gt;</tw-passagedata><tw-passagedata pid="76" name="LeaderMissing_Investigate" tags="" position="1300,4750" size="100,100">&lt;&lt;map &quot;forest&quot;&gt;&gt;\
-You follow the faint scent of $clan.leader.name through the woods for hours, looking for any sign of $clan.leader.them. The trail winds through the forest, eventually drawing close to the geyser fields.
 Tensions in the clan have been rising as there have been strange sightings of beasts roaming the territory, many assuming that fabled wolves have returned to the area.
 
-&lt;span id=&quot;geyser-ending-description&quot;&gt;&lt;&lt;link &quot;geyser fields&quot;&gt;&gt;&lt;&lt;replace &quot;#geyser-ending-description&quot;&gt;&gt;geyser fields.&lt;&lt;map &quot;geysers&quot;&gt;&gt;
 &quot;Something must be done,&quot; says $clan.leader.name. 
 
-Even from a distance, you can smell blood and sulphur in the air.
 &quot;What can we even do?&quot; $clan.medicine.name steps forward from the medicine den. &quot;Perhaps it&#39;s best to just secure our borders.&quot;
 
 &lt;&lt;if $player.role isnot &quot;combat&quot;&gt;&gt;&lt;&lt;set $mentorIndex to 0&gt;&gt;&lt;&lt;/if&gt;&gt;
@@ -2120,8 +2102,6 @@ You arrive just in time to see a large grey canine through the steam. Before you
 
 You...
 [[...immediately look to see if there are any survivors.|Investigate_Bodies][$player.wolf++]]
-[[...take off after the wolf.|Investigate_Trail][$player.wolf--]]&lt;&lt;/replace&gt;&gt;&lt;&lt;/link&gt;&gt;&lt;/span&gt;.
-&lt;&lt;audio &quot;Gieser&quot; volume 0.05 play&gt;&gt;\</tw-passagedata><tw-passagedata pid="77" name="LeaderMissing_Omens" tags="" position="1575,4750" size="100,100">You look to the skies for guidance. 
 [[...take off after the wolf.|Investigate_Trail][$player.wolf--]]
 &lt;&lt;audio &quot;Gieser&quot; volume 0.05 play&gt;&gt;\</tw-passagedata><tw-passagedata pid="77" name="LeaderMissing_Omens" tags="" position="3150,325" size="100,100">You look to the skies for guidance. 
 
@@ -2133,12 +2113,10 @@ There is a secret tunnel in the back of the medicine cat&#39;s den, now your den
 You rush into the medicine cat&#39;s den. &quot;Could you--?&quot; you ask, and before you even finish, $clan.medicine.name nods and rushes into a small opening at the back of the den. 
 
 [[You wait for the medicine cat to return.|Omens_NonMedicine]]
-&lt;&lt;/if&gt;&gt;\</tw-passagedata><tw-passagedata pid="78" name="LeaderMissing_Wait" tags="" position="1725,4600" size="100,100">You trust $clan.leader.name, and while you might be anxious, you do not want to risk losing any more clanmates trying to find $clan.leader.them.
 &lt;&lt;/if&gt;&gt;\</tw-passagedata><tw-passagedata pid="78" name="LeaderMissing_Wait" tags="" position="3300,200" size="100,100">You trust $clan.leader.name, and while you might be anxious, you do not want to risk losing any more clanmates trying to find $clan.leader.them.
 
 However, when another day goes by with no sign of them, you decide to...
 [[...try finding them.|LeaderMissing_Investigate]]
-[[...look to the Gods for help.|LeaderMissing_Omens]]</tw-passagedata><tw-passagedata pid="79" name="NewDeputy_Elect" tags="leader" position="1600,4600" size="100,100">Before you can do anything, $clan.elders[0].name stops you, and you can see that everyone is organizing around you.
 [[...look to the Gods for help.|LeaderMissing_Omens]]</tw-passagedata><tw-passagedata pid="79" name="NewDeputy_Elect" tags="leader" position="3175,200" size="100,100">Before you can do anything, $clan.elders[0].name stops you, and you can see that everyone is organizing around you.
 
 $clan.elders[0].They laugh$clan.elders[0].s at your surprised face. &quot;Everyone in $clan.name trusts you, and we know you are looking out for us. Stay here, keep everyone calm and let them report back to you.&quot;
@@ -2147,7 +2125,6 @@ Glancing around the clan, you realize it&#39;s your duty to take over as the cla
 
 [[...investigating. |LeaderMissing_Investigate]]
 [[...asking the Gods for an omen. |LeaderMissing_Omens]]
-[[...waiting a little longer|LeaderMissing_Wait]]</tw-passagedata><tw-passagedata pid="80" name="Omens_Medicine" tags="medicine" position="1525,4875" size="100,100">Shutting your eyes, you see stars take over your vision. Slowly, images take over; you see wolves running through the forest and crashing through branches and rivers. You feel they have some need, some want, something more than just hunger or anger, but you&#39;re not sure what it is.
 [[...waiting a little longer.|LeaderMissing_Wait]]</tw-passagedata><tw-passagedata pid="80" name="Omens_Medicine" tags="medicine" position="3100,450" size="100,100">Shutting your eyes, you see stars take over your vision. Slowly, images take over; you see wolves running through the forest and crashing through branches and rivers. You feel they have some need, some want, something more than just hunger or anger, but you&#39;re not sure what it is.
 
 You watch as some faceless wolves snatch up cats-- almost certainly $clan.leader.name and $clan.deputy.name, as well as the warriors that went with them. 
@@ -2158,14 +2135,12 @@ Walking outside, you see the clan is waiting to hear what you have to say. &quot
 
 The whole clan goes silent for longer than you&#39;ve ever heard. It&#39;s so quiet you can hear the kits rustling in their den; the birds flying in the trees, and clear as day but miles away: the howls of wolves.
 
-After some time, the clan goes back to their daily chores and [[somehow carries on|clan_downtime_1]].</tw-passagedata><tw-passagedata pid="81" name="Omens_NonMedicine" tags="" position="1675,4875" size="100,100">$clan.medicine.name comes out of the tunnel, their face stoic. &quot;Wolves have returned to the territories, but something is... wrong with them.&quot;
 After some time, the clan goes back to their daily chores and [[somehow carries on|clan_downtime_1]].</tw-passagedata><tw-passagedata pid="81" name="Omens_NonMedicine" tags="" position="3250,450" size="100,100">$clan.medicine.name comes out of the tunnel, their face stoic. &quot;Wolves have returned to the territories, but something is... wrong with them.&quot;
 
 &quot;And what of $clan.leader.name? Or $clan.deputy.name? Or any of the warriors?&quot;
 
 $clan.medicine.They look$clan.medicine.s back at you, their eyes dark and stormy. &quot;The Gods suggest we don&#39;t waste resources looking for them.&quot;
 
-You both sit in silence for a lifetime before you head back out to the camp and [[somehow carry on|clan_downtime_1]].</tw-passagedata><tw-passagedata pid="82" name="Investigate_Bodies" tags="" position="1225,4875" size="100,100">&lt;&lt;set $clan.deputy.status to &quot;dead&quot;&gt;&gt;\
 You both sit in silence for a lifetime before you head back out to the camp and [[somehow carry on|clan_downtime_1]].</tw-passagedata><tw-passagedata pid="82" name="Investigate_Bodies" tags="" position="2800,450" size="100,100">&lt;&lt;set $clan.deputy.status to &quot;dead&quot;&gt;&gt;\
 Carefully weaving around the geysers, you investigate the bodies. $clan.deputy.name lies dead on $clan.deputy.their side, and a heavily injured $clan.warriors[0].name lies near them, struggling to breathe.
 
@@ -2184,7 +2159,6 @@ Turning away, you try to piece together what happened. The cats were ambused, bu
 You stand in silent shock before walking with $clan.warriors[0].name [[back to camp with no good information|clan_downtime_1]].
 &lt;&lt;else&gt;&gt;\
 You stand in silent shock before walking [[back to camp with no good information|clan_downtime_1]].
-&lt;&lt;/if&gt;&gt;\</tw-passagedata><tw-passagedata pid="83" name="Investigate_Trail" tags="combat" position="1375,4875" size="100,100">&lt;&lt;if $player.combat &gt; random(0,10)&gt;&gt;
 &lt;&lt;/if&gt;&gt;\</tw-passagedata><tw-passagedata pid="83" name="Investigate_Trail" tags="combat" position="2950,450" size="100,100">&lt;&lt;if $player.combat &gt; random(0,10)&gt;&gt;
 You rush after the wolf, pushing hard against your paws to match their speed. Jumping over geysers and crevasse, you get close enough to nip at their leg.
 
@@ -2210,7 +2184,6 @@ You pound on the ground as hard as you can, but the wolf is faster and stronger 
 The wolf gets away, and with him, all hopes of finding the leader, deputy, and warriors who came out here. 
 
 You stand in silent shock before walking [[back to camp with no good information|clan_downtime_1]].
-&lt;&lt;/if&gt;&gt;</tw-passagedata><tw-passagedata pid="84" name="clan_downtime_1" tags="" position="1400,5025" size="200,200">&lt;&lt;map &quot;camp&quot;&gt;&gt;\
 &lt;&lt;/if&gt;&gt;</tw-passagedata><tw-passagedata pid="84" name="clan_downtime_1" tags="" position="2975,600" size="200,200">&lt;&lt;map &quot;camp&quot;&gt;&gt;\
 Standing near the camp entrance, you take a deep breath. Everything smells the same. 
 
@@ -2229,14 +2202,12 @@ You consider...
 &lt;&lt;case &quot;leader&quot;&gt;&gt;\
 [[...speaking with the council and warriors.|leader-full-downtime][$player.leader++]]
 &lt;&lt;/switch&gt;&gt;\
-[[...patrolling.|full-downtime-01][$player.combat++]]</tw-passagedata><tw-passagedata pid="85" name="full-downtime-01" tags="combat" position="1225,5275" size="100,100">You walk around the &lt;span id=&quot;forest-description&quot;&gt;&lt;&lt;link &quot;forest&quot;&gt;&gt;&lt;&lt;replace &quot;#forest-description&quot;&gt;&gt; forest, finding what you now know to be wolf prints&lt;&lt;map &quot;forest&quot;&gt;&gt;&lt;&lt;/replace&gt;&gt;&lt;&lt;/link&gt;&gt;&lt;/span&gt;. 
 [[...patrolling.|full-downtime-01][$player.combat++]]</tw-passagedata><tw-passagedata pid="85" name="full-downtime-01" tags="combat" position="2800,850" size="100,100">You walk around the &lt;span id=&quot;forest-description&quot;&gt;&lt;&lt;link &quot;forest&quot;&gt;&gt;&lt;&lt;replace &quot;#forest-description&quot;&gt;&gt; forest, finding what you now know to be wolf prints&lt;&lt;map &quot;forest&quot;&gt;&gt;&lt;&lt;/replace&gt;&gt;&lt;&lt;/link&gt;&gt;&lt;/span&gt;. 
 
 You make your way through the &lt;span id=&quot;geysers-description&quot;&gt;&lt;&lt;link &quot;geyser fields&quot;&gt;&gt;&lt;&lt;replace &quot;#geysers-description&quot;&gt;&gt; geyser fields. They are in their perpetual state of dry, wet, and hot, untouched by the cursed that seems to have touched your clan. You watch as the geysers spout their fountains of water, and imagine they&#39;re made of tears. Even these geysers could not spout enough&lt;&lt;map &quot;geysers&quot;&gt;&gt;&lt;&lt;/replace&gt;&gt;&lt;&lt;/link&gt;&gt;&lt;/span&gt;. 
 
 You round the &lt;span id=&quot;lake-description&quot;&gt;&lt;&lt;link &quot;lake&quot;&gt;&gt;&lt;&lt;replace &quot;#lake-description&quot;&gt;&gt;lake, the same place where everything started, when $clan.deputy.name found you back when you were a kit. Back when you didn&#39;t know any better. You stare at yourself in the water, unsure if a ship that&#39;s changed its pieces at every crossroads is the same ship that docks in the end&lt;&lt;map &quot;lake&quot;&gt;&gt;&lt;&lt;/replace&gt;&gt;&lt;&lt;/link&gt;&gt;&lt;/span&gt;.
 
-And finally, you&#39;re back [[at camp|clan_event_1]].</tw-passagedata><tw-passagedata pid="86" name="combat-full-downtime" tags="combat" position="1375,5275" size="100,100">&lt;&lt;map &quot;lake&quot;&gt;&gt;\
 And finally, you&#39;re back [[at camp|clan_event_1]].</tw-passagedata><tw-passagedata pid="86" name="combat-full-downtime" tags="combat" position="2950,850" size="100,100">&lt;&lt;map &quot;lake&quot;&gt;&gt;\
 You find a smooth stone in the forest and extend your claws, sharpening them to a point. Joining a group of warriors, you train with them near the lake.
 
@@ -2248,13 +2219,11 @@ You manage to get a few swipes on them, however, and are delcared the victor of 
 You get pushed over easily, and decide that you probably need more training if you&#39;re ever going to face the wolves.
 &lt;&lt;/if&gt;&gt;\
 
-Shaking the dust from your pelt, you [[head back to camp|clan_event_1]].</tw-passagedata><tw-passagedata pid="87" name="medicine-full-downtime" tags="medicine" position="1525,5275" size="100,100">&lt;&lt;map &quot;forest&quot;&gt;&gt;\
 Shaking the dust from your pelt, you [[head back to camp|clan_event_1]].</tw-passagedata><tw-passagedata pid="87" name="medicine-full-downtime" tags="medicine" position="3100,850" size="100,100">&lt;&lt;map &quot;forest&quot;&gt;&gt;\
 You take some time to gather herbs from the forest, being careful to pick just the flowers and leaves to let the roots continue to grow. 
 
 As you gather, you find some tracks in the dirt that you know now must be wolf tracks. There are big sets that get dangerously close to the camp but turn away before reaching it, and smaller tracks that seem to wander off to different piles of leaves and bushes.
 
-You quickly head back to [[the safety of camp|clan_event_1]].</tw-passagedata><tw-passagedata pid="88" name="leader-full-downtime" tags="leader" position="1675,5275" size="100,100">You quietly gather the council together, hoping to shine some light on the recent events, hoping there is news.
 You quickly head back to [[the safety of camp|clan_event_1]].</tw-passagedata><tw-passagedata pid="88" name="leader-full-downtime" tags="leader" position="3250,850" size="100,100">You quietly gather the council together, hoping to shine some light on the recent events, hoping there is news.
 
 &quot;Anything? Anything at all?&quot; you ask.
@@ -2286,7 +2255,6 @@ Everyone is silent for a moment before $clan.warriors[3].name offers, &quot;I sa
 
 $clan.warriors[3].name shakes $clan.warriors[3].their head. &quot;I don&#39;t think so. Maybe we know something they don&#39;t?&quot;
 
-You decide to call the meeting there as the patrol brings in fresh prey for the prey pile. You look around, watching as others stand and stretch, realizing everyone&#39;s thinner than you thought they were. You walk outside, [[joining them for a meal|clan_event_1]].</tw-passagedata><tw-passagedata pid="89" name="clan_event_1" tags="" position="1400,5425" size="200,200">&lt;&lt;map &quot;camp&quot;&gt;&gt;
 You decide to call the meeting there as the patrol brings in fresh prey for the prey pile. You look around, watching as others stand and stretch, realizing everyone&#39;s thinner than you thought they were. You walk outside, [[joining them for a meal|clan_event_1]].</tw-passagedata><tw-passagedata pid="89" name="clan_event_1" tags="" position="2975,1000" size="200,200">&lt;&lt;map &quot;camp&quot;&gt;&gt;
 In the center of camp, you glance around your clan. Time has taken its toll as you see skeletons of what used to be hearty warriors, apprentices, kits...
 
@@ -2298,7 +2266,6 @@ $clan.apprentices[2].name pipes up: &quot;I bet those dogs are scaring all the p
 
 You nod slowly, and you see other cats in the clan have the same thought you do. Maybe the wolves &lt;i&gt;are&lt;/i&gt; scaring the prey away.
 
-Looking over, you see $clan.warriors[1].name&#39;s tail straighten in alert. Almost as one, the warriors who just came off patrol [[look at the camp entrance|clan_event_1-1]].</tw-passagedata><tw-passagedata pid="90" name="&#39; + $randomApprenticeEvent[0] + &#39;" tags="" position="975,3500" size="100,100">Double-click this passage to edit it.</tw-passagedata><tw-passagedata pid="91" name="&quot;apprentice-00&quot;,&quot;You hear some hissing somewhere in camp.&quot;,&quot;You slowly walk over to investigate.&quot;],[&quot;apprentice-01&quot;,&quot;You smell something horrid in the apprentice den.&quot;,&quot;Sniffing it out, you think it&#39;s under someone&#39;s bed.&quot;],[&quot;apprentice-02&quot;,&quot;While the other cats are busy, you hear some strange noises coming from rough waters near camp.&quot;,&quot;You perk your ears, trying to locate the noises.&quot;" tags="" position="2025,775" size="100,100">Double-click this passage to edit it.</tw-passagedata><tw-passagedata pid="92" name="&quot;apprentice-01&quot;,&quot;You hear some hissing somewhere in camp.&quot;,&quot;You slowly walk over to investigate.&quot;],[&quot;apprentice-02&quot;,&quot;You smell something horrid in the apprentice den.&quot;,&quot;Sniffing it out, you think it&#39;s under someone&#39;s bed.&quot;],[&quot;apprentice-03&quot;,&quot;While the other cats are busy, you hear some strange noises coming from rough waters near camp.&quot;,&quot;You perk your ears, trying to locate the noises.&quot;" tags="" position="2150,775" size="100,100">Double-click this passage to edit it.</tw-passagedata><tw-passagedata pid="93" name="clan_event_1-1" tags="" position="1450,5650" size="100,100">&quot;I thought we lost them around the lake,&quot; $clan.warriors[1].name hisses.
 Looking over, you see $clan.warriors[1].name&#39;s tail straighten in alert. Almost as one, the warriors who just came off patrol [[look at the camp entrance|clan_event_1-1]].</tw-passagedata><tw-passagedata pid="90" name="&#39; + $randomApprenticeEvent[0] + &#39;" tags="" position="975,3500" size="100,100">Double-click this passage to edit it.</tw-passagedata><tw-passagedata pid="91" name="&quot;apprentice-00&quot;,&quot;You hear some hissing somewhere in camp.&quot;,&quot;You slowly walk over to investigate.&quot;],[&quot;apprentice-01&quot;,&quot;You smell something horrid in the apprentice den.&quot;,&quot;Sniffing it out, you think it&#39;s under someone&#39;s bed.&quot;],[&quot;apprentice-02&quot;,&quot;While the other cats are busy, you hear some strange noises coming from rough waters near camp.&quot;,&quot;You perk your ears, trying to locate the noises.&quot;" tags="" position="2025,775" size="100,100">Double-click this passage to edit it.</tw-passagedata><tw-passagedata pid="92" name="&quot;apprentice-01&quot;,&quot;You hear some hissing somewhere in camp.&quot;,&quot;You slowly walk over to investigate.&quot;],[&quot;apprentice-02&quot;,&quot;You smell something horrid in the apprentice den.&quot;,&quot;Sniffing it out, you think it&#39;s under someone&#39;s bed.&quot;],[&quot;apprentice-03&quot;,&quot;While the other cats are busy, you hear some strange noises coming from rough waters near camp.&quot;,&quot;You perk your ears, trying to locate the noises.&quot;" tags="" position="2150,775" size="100,100">Double-click this passage to edit it.</tw-passagedata><tw-passagedata pid="93" name="clan_event_1-1" tags="" position="3025,1225" size="100,100">&quot;I thought we lost them around the lake,&quot; $clan.warriors[1].name hisses.
 
 &quot;Thought you lost &lt;i&gt;who&lt;/i&gt; around the lake?&quot; you demand, stepping closer to $clan.warriors[1].them.
@@ -2318,7 +2285,6 @@ Looking around, you realize that without a leader, no one is sure who should ste
 You pause just for a moment to consider what to say.
 &quot;[[What are you doing here?|clan_event_1-1-1]]&quot;
 &quot;[[Where is our leader?|clan_event_1-1-2]]&quot;
-&quot;[[You need to leave, now.|clan_event_1-1-3][$player.wolf--]]&quot;</tw-passagedata><tw-passagedata pid="94" name="clan_event_1-1-1" tags="" position="1300,5800" size="100,100">&quot;What are you doing here?!&quot; you demand, stepping ahead of the clan to face the wolves.
 &quot;[[You need to leave, now.|clan_event_1-1-3][$player.wolf--]]&quot;</tw-passagedata><tw-passagedata pid="94" name="clan_event_1-1-1" tags="" position="2875,1375" size="100,100">&quot;What are you doing here?!&quot; you demand, stepping ahead of the clan to face the wolves.
 
 The alpha wolf looks down at you and glares for a moment. They turn to face another wolf, exchange a few words you don&#39;t know, and respond in a half-language you can barely understand:
@@ -2333,7 +2299,6 @@ You pause before asking something else, attempting to speak their language.
 
 &lt;span class=&quot;wolf-speak&quot;&gt;&quot;[[🐺?|clan_event_1-1-1-who-are-you]]&quot;&lt;/span&gt;
 &lt;span class=&quot;wolf-speak&quot;&gt;&quot;[[🐺🐾🏕️?|clan_event_1-1-1-why-come-here]]&quot;&lt;/span&gt;
-&lt;span class=&quot;wolf-speak&quot;&gt;&quot;[[🐺🐱?|clan_event_1-1-1-why-cats]]&quot;&lt;/span&gt;</tw-passagedata><tw-passagedata pid="95" name="clan_event_1-1-2" tags="" position="1450,5800" size="100,100">&quot;Where is our leader?!&quot; you demand, putting yourself between the clan and the wolves. 
 &lt;span class=&quot;wolf-speak&quot;&gt;&quot;[[🐺🐱?|clan_event_1-1-1-why-cats]]&quot;&lt;/span&gt;</tw-passagedata><tw-passagedata pid="95" name="clan_event_1-1-2" tags="" position="3025,1375" size="100,100">&quot;Where is our leader?!&quot; you demand, putting yourself between the clan and the wolves. 
 
 The alpha wolf looks down at you and glares for a moment. They turn to face another wolf, exchange a few words you don&#39;t know, and respond in a half-language you can barely understand:
@@ -2348,7 +2313,6 @@ You pause before asking something else, attempting to speak their language.
 
 &lt;span class=&quot;wolf-speak&quot;&gt;&quot;[[🐺?|clan_event_1-1-1-who-are-you]]&quot;&lt;/span&gt;
 &lt;span class=&quot;wolf-speak&quot;&gt;&quot;[[🐺🐾🏕️?|clan_event_1-1-1-why-come-here]]&quot;&lt;/span&gt;
-&lt;span class=&quot;wolf-speak&quot;&gt;&quot;[[♨️?|clan_event_1-1-2-geysers]]&quot;&lt;/span&gt;</tw-passagedata><tw-passagedata pid="96" name="clan_event_1-1-3" tags="" position="1600,5800" size="100,100">&quot;You need to leave, now.&quot; you growl, stepping to the front of the clan. 
 &lt;span class=&quot;wolf-speak&quot;&gt;&quot;[[♨️?|clan_event_1-1-2-geysers]]&quot;&lt;/span&gt;</tw-passagedata><tw-passagedata pid="96" name="clan_event_1-1-3" tags="" position="3175,1375" size="100,100">&quot;You need to leave, now.&quot; you growl, stepping to the front of the clan. 
 
 The alpha wolf looks down at you and glares for a moment. They turn to face another wolf, exchange a few words you don&#39;t know, and respond in a half-language you can barely understand:
@@ -2363,34 +2327,28 @@ You pause before asking something else, attempting to speak their language.
 
 &lt;span class=&quot;wolf-speak&quot;&gt;&quot;[[🐺?|clan_event_1-1-1-who-are-you]]&quot;&lt;/span&gt;
 &lt;span class=&quot;wolf-speak&quot;&gt;&quot;[[🐺🐾🏕️?|clan_event_1-1-1-why-come-here]]&quot;&lt;/span&gt;
-&lt;span class=&quot;wolf-speak&quot;&gt;&quot;[[🐺🐱?|clan_event_1-1-1-why-cats]]&quot;&lt;/span&gt;</tw-passagedata><tw-passagedata pid="97" name="clan_event_1-1-1-who-are-you" tags="" position="1300,6050" size="100,100">&quot;&lt;span class=&quot;wolf-speak&quot;&gt;🐺&lt;/span&gt;?&quot; you ask, still not really sure what you&#39;re asking. 
 &lt;span class=&quot;wolf-speak&quot;&gt;&quot;[[🐺🐱?|clan_event_1-1-1-why-cats]]&quot;&lt;/span&gt;</tw-passagedata><tw-passagedata pid="97" name="clan_event_1-1-1-who-are-you" tags="" position="2875,1625" size="100,100">&quot;&lt;span class=&quot;wolf-speak&quot;&gt;🐺&lt;/span&gt;?&quot; you ask, still not really sure what you&#39;re asking. 
 
 The wolf seems confused, but not hostile. They respond in their language:
 &quot;&lt;span class=&quot;wolf-speak&quot;&gt;🐺... 🌕 🔊... 🦌, 🐇, 🐿️, 🐟... 🐺.&lt;/span&gt;&quot;
 
-One of the other wolves interrupts what you can barely consider a conversation and [[picks up a warrior cat by the scruff|clan_event_1-2]].</tw-passagedata><tw-passagedata pid="98" name="clan_event_1-1-1-why-come-here" tags="" position="1450,6050" size="100,100">&quot;&lt;span class=&quot;wolf-speak&quot;&gt;🐺🐾🏕️&lt;/span&gt;?&quot; you ask, still not really sure what you&#39;re asking. 
 One of the other wolves interrupts what you can barely consider a conversation and [[picks up a warrior cat by the scruff|clan_event_1-2]].</tw-passagedata><tw-passagedata pid="98" name="clan_event_1-1-1-why-come-here" tags="" position="3025,1625" size="100,100">&quot;&lt;span class=&quot;wolf-speak&quot;&gt;🐺🐾🏕️&lt;/span&gt;?&quot; you ask, still not really sure what you&#39;re asking. 
 
 The wolf seems confused, but not hostile. They respond in their language:
 &quot;&lt;span class=&quot;wolf-speak&quot;&gt;🐺💀, 🐺🐱... 🐺🐾🐱🌲🐾🐱🏕️. 🐺🐾🏕️.&lt;/span&gt;&quot;
 
-One of the other wolves interrupts what you can barely consider a conversation and [[picks up a warrior cat by the scruff|clan_event_1-2]].</tw-passagedata><tw-passagedata pid="99" name="clan_event_1-1-1-why-cats" tags="" position="1600,6050" size="100,100">&quot;&lt;span class=&quot;wolf-speak&quot;&gt;🐺🐱&lt;/span&gt;?&quot; you ask, still not really sure what you&#39;re asking. 
 One of the other wolves interrupts what you can barely consider a conversation and [[picks up a warrior cat by the scruff|clan_event_1-2]].</tw-passagedata><tw-passagedata pid="99" name="clan_event_1-1-1-why-cats" tags="" position="3175,1625" size="100,100">&quot;&lt;span class=&quot;wolf-speak&quot;&gt;🐺🐱&lt;/span&gt;?&quot; you ask, still not really sure what you&#39;re asking. 
 
 The wolf seems confused, but not hostile. They respond in their language:
 &quot;&lt;span class=&quot;wolf-speak&quot;&gt;🐺💀, 🐺❓... 🗺️,🌿-- 🐺💀... 🐺🐱.&lt;/span&gt;&quot;
 
-One of the other wolves interrupts what you can barely consider a conversation and [[picks up a warrior cat by the scruff|clan_event_1-2]].</tw-passagedata><tw-passagedata pid="100" name="clan_event_1-2" tags="" position="1400,6200" size="200,200">Other warriors jump into action, pounding on the wolf that snatched one of their own. But the lack of food has deteriorated the cats of the clan far more than you thought. 
 One of the other wolves interrupts what you can barely consider a conversation and [[picks up a warrior cat by the scruff|clan_event_1-2]].</tw-passagedata><tw-passagedata pid="100" name="clan_event_1-2" tags="" position="2975,1775" size="200,200">Other warriors jump into action, pounding on the wolf that snatched one of their own. But the lack of food has deteriorated the cats of the clan far more than you thought. 
 
-They barely manage a yip before being tossed aside. The wolf holds the  cat easily and motions to the rest of the pack to leave. The alpha takes one last look at you before [[bounding away after the rest of the wolves|clan-downtime-2]].</tw-passagedata><tw-passagedata pid="101" name="clan_event_1-1-2-geysers" tags="" position="1450,5925" size="100,100">&quot;&lt;span class=&quot;wolf-speak&quot;&gt;♨️&lt;/span&gt;?&quot; you ask, still not really sure what you&#39;re asking. 
 They barely manage a yip before being tossed aside. The wolf holds the  cat easily and motions to the rest of the pack to leave. The alpha takes one last look at you before [[bounding away after the rest of the wolves|clan-downtime-2]].</tw-passagedata><tw-passagedata pid="101" name="clan_event_1-1-2-geysers" tags="" position="3025,1500" size="100,100">&quot;&lt;span class=&quot;wolf-speak&quot;&gt;♨️&lt;/span&gt;?&quot; you ask, still not really sure what you&#39;re asking. 
 
 The wolf seems confused, but not hostile. They respond in their language:
 &quot;&lt;span class=&quot;wolf-speak&quot;&gt;♨️.... 🌊🔥? ♨️?... 🏞️, 🌲, ♨️?... 🐺😿♨️?&lt;/span&gt;&quot;
 
-One of the other wolves interrupts what you can barely consider a conversation and [[picks up a warrior cat by the scruff|clan_event_1-2]].</tw-passagedata><tw-passagedata pid="102" name="clan-downtime-2" tags="camp" position="1450,6450" size="100,100">&lt;&lt;map &quot;camp&quot;&gt;&gt;\
 One of the other wolves interrupts what you can barely consider a conversation and [[picks up a warrior cat by the scruff|clan_event_1-2]].</tw-passagedata><tw-passagedata pid="102" name="clan-downtime-2" tags="camp" position="3025,2025" size="100,100">&lt;&lt;map &quot;camp&quot;&gt;&gt;\
 A few days have passed since the wolves took a cat. Since then, there have been a few more encounters with wolves. Mostly close calls, and the medicine cat&#39;s apprentices have taken over a lot of the medicinal roles to help out, though they are definitely inexperienced. They get cilantro to a kit for a stomach bug... Even you know that should&#39;ve been mint and lavender.
 
@@ -2405,7 +2363,6 @@ In your downtime, you consider...
 &lt;&lt;case &quot;leader&quot;&gt;&gt;\
 [[...speaking with the council and warriors.|leader-full-downtime-2][$player.leader++]]
 &lt;&lt;/switch&gt;&gt;\
-[[...patrolling.|full-downtime-01-2][$player.combat++;$player.wolf--]]</tw-passagedata><tw-passagedata pid="103" name="combat-full-downtime-2" tags="combat" position="1375,6600" size="100,100">&lt;&lt;map &quot;lake&quot;&gt;&gt;\
 [[...patrolling.|full-downtime-01-2][$player.combat++;$player.wolf--]]</tw-passagedata><tw-passagedata pid="103" name="combat-full-downtime-2" tags="combat" position="2950,2175" size="100,100">&lt;&lt;map &quot;lake&quot;&gt;&gt;\
 You sharpen your claws on a nearby rock and head down to the lake where the warriors gather to train.
 
@@ -2417,13 +2374,11 @@ You manage to get a few swipes on them, however, and are delcared the victor of 
 You get pushed over easily, and decide that you probably need more training if you&#39;re ever going to face the wolves.
 &lt;&lt;/if&gt;&gt;\
 
-Shaking the dust from your pelt, you [[head back to camp|clan_event_2]].</tw-passagedata><tw-passagedata pid="104" name="medicine-full-downtime-2" tags="medicine" position="1525,6600" size="100,100">&lt;&lt;map &quot;forest&quot;&gt;&gt;\
 Shaking the dust from your pelt, you [[head back to camp|clan_event_2]].</tw-passagedata><tw-passagedata pid="104" name="medicine-full-downtime-2" tags="medicine" position="3100,2175" size="100,100">&lt;&lt;map &quot;forest&quot;&gt;&gt;\
 You take a walk through the forest, keeping your ears perked for any sign of danger. The slightest rubbing of a branch makes your hairs raise, which you now realize is probably inevitable as you harvest herbs.
 
 You make your trip short, even though you usually like to take your time making sure you don&#39;t pull herb roots. But right now, you&#39;d rather be back at camp.
 
-Just as you&#39;re about to leave, you spot what looks to be wolf silhouettes against the sunset, but [[you don&#39;t stick around to find out|clan_event_2]].</tw-passagedata><tw-passagedata pid="105" name="leader-full-downtime-2" tags="leader" position="1675,6600" size="100,100">You gather the council together. You don&#39;t even need to tell them why--the council already wanted to meet.
 Just as you&#39;re about to leave, you spot what looks to be wolf silhouettes against the sunset, but [[you don&#39;t stick around to find out|clan_event_2]].</tw-passagedata><tw-passagedata pid="105" name="leader-full-downtime-2" tags="leader" position="3250,2175" size="100,100">You gather the council together. You don&#39;t even need to tell them why--the council already wanted to meet.
 
 &quot;What&#39;ve we got?&quot; you ask.
@@ -2448,7 +2403,6 @@ The council glares at $clan.warriors[4].them, and $clan.warriors[4].they glare$c
 
 &quot;Well, when you spoke to them, they said something to the extent of &#39;🐺🐱&#39;. Which I believe means, &#39;We need you.&#39;&quot;
 
-There&#39;s a moment of silence that stretches for minutes, maybe even hours, as the council thinks this new information over. You dismiss the council, and [[continue thinking about it yourself as you fall asleep tonight|clan_event_2]].</tw-passagedata><tw-passagedata pid="106" name="full-downtime-01-2" tags="combat" position="1225,6600" size="100,100">You walk around the &lt;span id=&quot;forest-description&quot;&gt;&lt;&lt;link &quot;forest&quot;&gt;&gt;&lt;&lt;replace &quot;#forest-description&quot;&gt;&gt; forest, finding more wolf prints from the other day, leading right up to the camp. How come you didn&#39;t hear them coming?&lt;&lt;map &quot;forest&quot;&gt;&gt;&lt;&lt;/replace&gt;&gt;&lt;&lt;/link&gt;&gt;&lt;/span&gt;. 
 There&#39;s a moment of silence that stretches for minutes, maybe even hours, as the council thinks this new information over. You dismiss the council, and [[continue thinking about it yourself as you fall asleep tonight|clan_event_2]].</tw-passagedata><tw-passagedata pid="106" name="full-downtime-01-2" tags="combat" position="2800,2175" size="100,100">You walk around the &lt;span id=&quot;forest-description&quot;&gt;&lt;&lt;link &quot;forest&quot;&gt;&gt;&lt;&lt;replace &quot;#forest-description&quot;&gt;&gt; forest, finding more wolf prints from the other day, leading right up to the camp. How come you didn&#39;t hear them coming?&lt;&lt;map &quot;forest&quot;&gt;&gt;&lt;&lt;/replace&gt;&gt;&lt;&lt;/link&gt;&gt;&lt;/span&gt;. 
 
 You make your way through the &lt;span id=&quot;geysers-description&quot;&gt;&lt;&lt;link &quot;geyser fields&quot;&gt;&gt;&lt;&lt;replace &quot;#geysers-description&quot;&gt;&gt; geyser fields. They give you no new information, as the ground is as dry and hard as ever. Even when you pound the ground, you barely make an indent. Getting close to the water, you nearly burn fur. You quickly pull away from the mouth of the geyser&lt;&lt;map &quot;geysers&quot;&gt;&gt;&lt;&lt;/replace&gt;&gt;&lt;&lt;/link&gt;&gt;&lt;/span&gt;. 
@@ -2457,7 +2411,6 @@ You round the &lt;span id=&quot;lake-description&quot;&gt;&lt;&lt;link &quot;lak
 
 What did those wolves want? And was their language? 
 
-You end up back [[at camp|clan_event_2]].</tw-passagedata><tw-passagedata pid="107" name="clan_event_2" tags="" position="1400,6800" size="200,200">&lt;&lt;map &quot;camp&quot;&gt;&gt;\
 You end up back [[at camp|clan_event_2]].</tw-passagedata><tw-passagedata pid="107" name="clan_event_2" tags="" position="2975,2375" size="200,200">&lt;&lt;map &quot;camp&quot;&gt;&gt;\
 The next day, you wake up earlier than normal. The sun is considering rising soon, but hasn&#39;t hit the horizon yet.
 
@@ -2465,30 +2418,25 @@ You can see in the blue haze of the morning that there&#39;s no prey left to eat
 
 Padding around camp, you glance and see all the other cats sleeping near their loved ones, huddling for heat because their pelts are no longer enough.
 
-Wandering around, [[you sniff something gut-wrenchingly familiar|clan_event_2-1]].</tw-passagedata><tw-passagedata pid="108" name="clan_event_2-1" tags="" position="1450,7025" size="100,100">&lt;&lt;map &quot;forest&quot;&gt;&gt;\
 Wandering around, [[you sniff something gut-wrenchingly familiar|clan_event_2-1]].</tw-passagedata><tw-passagedata pid="108" name="clan_event_2-1" tags="" position="3025,2600" size="100,100">&lt;&lt;map &quot;forest&quot;&gt;&gt;\
 You follow the smell into the forest, leading to the well-known wolf tracks. The scent seems stronger here, and as you follow the tracks, you realize you&#39;ve wandered farther from camp than you ever have before.
 
 You barely recognize your surroundings, but you nevertheless continue following the scent.
 
-Both the smell and pawprints vanish over large boulders that [[open up into a cavern|clan_event_2-2]].</tw-passagedata><tw-passagedata pid="109" name="clan_event_2-2" tags="" position="1450,7175" size="100,100">&quot;...$clan.leader.name?&quot; you whisper, hestiant to get any closer to the den.
 Both the smell and pawprints vanish over large boulders that [[open up into a cavern|clan_event_2-2]].</tw-passagedata><tw-passagedata pid="109" name="clan_event_2-2" tags="" position="3025,2750" size="100,100">&quot;...$clan.leader.name?&quot; you whisper, hestiant to get any closer to the den.
 
 When you don&#39;t hear anything back, you debate whether to...
 [[...go into the den.|clan_event_2-2-den]]
-[[...head back to the safety of camp.|clan_event_2-2-camp]]</tw-passagedata><tw-passagedata pid="110" name="clan_event_2-2-den" tags="" position="1375,7325" size="100,100">Entering the wolf den, you realize it&#39;s dead silent because there&#39;s barely anything alive here.
 [[...head back to the safety of camp.|clan_event_2-2-camp]]</tw-passagedata><tw-passagedata pid="110" name="clan_event_2-2-den" tags="" position="2950,2900" size="100,100">Entering the wolf den, you realize it&#39;s dead silent because there&#39;s barely anything alive here.
 
 You look around the space and see large swathes of fur, barely breathing in and out, and messes of some red substance all over the stones. The wolves whimper when you get close and attempt to nip at your paws. But you both know they aren&#39;t going to do any real damage.
 
 &quot;$clan.leader.name?&quot; you call louder, going further back.
 
-The name echoes around you, but you finally hear a response: &quot;&lt;&lt;print &quot;[[&quot; + $player.name + &quot;?|clan_event_2-2-den-response]]&quot;&gt;&gt;&quot;</tw-passagedata><tw-passagedata pid="111" name="clan_event_2-2-camp" tags="" position="1525,7325" size="100,100">As you turn back to camp, you hear soft padding in the cave. 
 The name echoes around you, but you finally hear a response: &quot;&lt;&lt;print &quot;[[&quot; + $player.name + &quot;?|clan_event_2-2-den-response]]&quot;&gt;&gt;&quot;</tw-passagedata><tw-passagedata pid="111" name="clan_event_2-2-camp" tags="" position="3100,2900" size="100,100">As you turn back to camp, you hear soft padding in the cave. 
 
 You wait just a moment and see $clan.leader.name and the other cat [[barely making it out of the den|clan_event_2-2-camp-leader]].
 
-</tw-passagedata><tw-passagedata pid="112" name="clan_event_2-2-den-response" tags="" position="1375,7450" size="100,100">&quot;Yes!&quot; you practically yell, bounding back to find $clan.leader.name sprawled on the floor, an almost unidentifiable pile of bones and fur. 
 </tw-passagedata><tw-passagedata pid="112" name="clan_event_2-2-den-response" tags="" position="2950,3025" size="100,100">&quot;Yes!&quot; you practically yell, bounding back to find $clan.leader.name sprawled on the floor, an almost unidentifiable pile of bones and fur. 
 
 &quot;What... what happened?&quot; you ask, licking $clan.leader.their fur clean.
@@ -2503,11 +2451,9 @@ You wait just a moment and see $clan.leader.name and the other cat [[barely maki
 
 &quot;I think the wolves put them further back in the cave... if you help me up, I could help you find them.&quot;
 
-&quot;All right then, quickly. Let&#39;s get you both [[back to camp|clan_event_2-3]].&quot;</tw-passagedata><tw-passagedata pid="113" name="clan_event_2-3" tags="" position="1450,7575" size="100,100">&lt;&lt;map &quot;camp&quot;&gt;&gt;\
 &quot;All right then, quickly. Let&#39;s get you both [[back to camp|clan_event_2-3]].&quot;</tw-passagedata><tw-passagedata pid="113" name="clan_event_2-3" tags="" position="3025,3150" size="100,100">&lt;&lt;map &quot;camp&quot;&gt;&gt;\
 Back at camp, you make sure $clan.leader.name and the other cat get the help they need from the medicine cats.
 
-Meanwhile, $clan.warriors[4].name stops you as you leave the medicine den. &quot;$player.name,&quot; they say gruffly. &quot;I think you need to [[come with me|clan_event_2-4]].&quot;</tw-passagedata><tw-passagedata pid="114" name="clan_event_2-2-camp-leader" tags="" position="1525,7450" size="100,100">&quot;$clan.leader.name!&quot; you shout. $clan.leader.They wince at the sudden noise, and hiss at you to stay quiet.
 Meanwhile, $clan.warriors[4].name stops you as you leave the medicine den. &quot;$player.name,&quot; they say gruffly. &quot;I think you need to [[come with me|clan_event_2-4]].&quot;</tw-passagedata><tw-passagedata pid="114" name="clan_event_2-2-camp-leader" tags="" position="3100,3025" size="100,100">&quot;$clan.leader.name!&quot; you shout. $clan.leader.They wince at the sudden noise, and hiss at you to stay quiet.
 
 &quot;If they knew you helped me leave, they wouldn&#39;t let either of us go. We should leave. Now.&quot; 
@@ -2516,7 +2462,6 @@ Meanwhile, $clan.warriors[4].name stops you as you leave the medicine den. &quot
 
 &quot;They&#39;re all... they&#39;re all sick. And they thought I had the answers. And when I didn&#39;t, they thought that other cat might... But no. Neither of us do.&quot;
 
-&quot;I know that,&quot; you nudge $clan.leader.them. &quot;All right. Let&#39;s get you both [[back to camp|clan_event_2-3]].&quot;</tw-passagedata><tw-passagedata pid="115" name="clan_event_2-4" tags="" position="1450,7700" size="100,100">&lt;&lt;map &quot;lake&quot;&gt;&gt;\
 &quot;I know that,&quot; you nudge $clan.leader.them. &quot;All right. Let&#39;s get you both [[back to camp|clan_event_2-3]].&quot;</tw-passagedata><tw-passagedata pid="115" name="clan_event_2-4" tags="" position="3025,3275" size="100,100">&lt;&lt;map &quot;lake&quot;&gt;&gt;\
 Walking alongside $clan.warriors[4].name, neither of you say anything. At the edge of the river, $clan.warriors[4].they nod$clan.warriors[4].s towards the same alpha wolf sitting on the other bank.
 
@@ -2539,7 +2484,6 @@ You consider what to say, unsure of what it means:
 &quot;&lt;span class=&quot;wolf-speak&quot;&gt;[[⛔🐱🐺|clan_event_2-4-no-help][$player.wolf--]]&lt;/span&gt;&quot;
 &quot;&lt;span class=&quot;wolf-speak&quot;&gt;[[🐱🐺|clan_event_2-4-help][$player.wolf++]]&lt;/span&gt;&quot;
 &lt;&lt;/if&gt;&gt;
-</tw-passagedata><tw-passagedata pid="116" name="clan_event_2-4-help" tags="" position="1375,7850" size="100,100">&lt;&lt;if visited(&quot;leader-full-downtime-2&quot;)&gt;&gt;
 </tw-passagedata><tw-passagedata pid="116" name="clan_event_2-4-help" tags="" position="2950,3425" size="100,100">&lt;&lt;if visited(&quot;leader-full-downtime-2&quot;)&gt;&gt;
 &quot;We&#39;ll help.\\&lt;span class=&quot;wolf-speak&quot;&gt;🐱🐺&lt;/span&gt;&quot; You nod, looking to $clan.warriors[4].name for affimation. $clan.warriors[4].they shrug$clan.warriors[4].s, clearly still confused by the conversation. 
 &lt;&lt;else&gt;&gt;
@@ -2570,7 +2514,6 @@ You consider what to say, unsure of what it means:
 
 &quot;&lt;span class=&quot;wolf-speak&quot;&gt;⛔😼🌿🐺. 😼😡, 🐺🦴. 🐺😼🌊&lt;/span&gt;,&quot; the wolf says, [[standing up across the river|ending-fail]].
 &lt;&lt;/if&gt;&gt;
-&lt;&lt;/if&gt;&gt;</tw-passagedata><tw-passagedata pid="117" name="clan_event_2-4-no-help" tags="" position="1525,7850" size="100,100">&lt;&lt;if visited(&quot;leader-full-downtime-2&quot;)&gt;&gt;
 &lt;&lt;/if&gt;&gt;</tw-passagedata><tw-passagedata pid="117" name="clan_event_2-4-no-help" tags="" position="3100,3425" size="100,100">&lt;&lt;if visited(&quot;leader-full-downtime-2&quot;)&gt;&gt;
 &quot;We won&#39;t help you.//&lt;span class=&quot;wolf-speak&quot;&gt;⛔🐱🐺&lt;/span&gt;,&quot; you say, shaking your head.
 
@@ -2579,17 +2522,14 @@ You consider what to say, unsure of what it means:
 &quot;&lt;span class=&quot;wolf-speak&quot;&gt;⛔🐱🐺&lt;/span&gt;,&quot; you say, shaking your head, still unsure what you&#39;re saying.
 
 &quot;&lt;span class=&quot;wolf-speak&quot;&gt;🐺🐱&lt;/span&gt;,&quot; the wolf repeats. &quot;&lt;span class=&quot;wolf-speak&quot;&gt;🐺🤢💀. ⛔⛔🐱. ⛔🐺💀🐺. 🐱, 🐺, 🐺🐾🏕️, 🐺,&lt;/span&gt;&quot; the wolf says, [[standing up on the other side of the river|ending-fail]].
-&lt;&lt;/if&gt;&gt;</tw-passagedata><tw-passagedata pid="118" name="ending-success" tags="" position="1375,8000" size="100,100">&lt;&lt;map &quot;camp&quot;&gt;&gt;\
 &lt;&lt;/if&gt;&gt;</tw-passagedata><tw-passagedata pid="118" name="ending-success" tags="" position="2950,3575" size="100,100">&lt;&lt;map &quot;camp&quot;&gt;&gt;\
 You stand up as the wolf stands on the other side of the bank. They hop easily over the water, and although they&#39;re weak, you can tell they&#39;ve at least been eating.
 
 You cautiously lead them back to camp, and call for the medicine cats. &quot;They want help-- this one, at least, comes in peace.&quot;
 
-The medicine cats nod, and [[talk with the wolf|ending-success-2]].</tw-passagedata><tw-passagedata pid="119" name="ending-fail" tags="" position="1525,8000" size="100,100">&lt;&lt;map &quot;camp&quot;&gt;&gt;\
 The medicine cats nod, and [[talk with the wolf|ending-success-2]].</tw-passagedata><tw-passagedata pid="119" name="ending-fail" tags="" position="3100,3575" size="100,100">&lt;&lt;map &quot;camp&quot;&gt;&gt;\
 The wolf stands on the opposite bank and leaps over the river easily.
 
-They quickly outpace you, running towards the $clan.name camp. [[You trail behind them|ending-fail-2]], even at your fastest pace.</tw-passagedata><tw-passagedata pid="120" name="ending-success-2" tags="" position="1375,8150" size="100,100">After many days and weeks of ferrying herbs and resources from the $clan.name camp to the wolf&#39;s den in the forest, the pack eventually regains their strength. 
 They quickly outpace you, running towards the $clan.name camp. [[You trail behind them|ending-fail-2]], even at your fastest pace.</tw-passagedata><tw-passagedata pid="120" name="ending-success-2" tags="" position="2950,3725" size="100,100">After many days and weeks of ferrying herbs and resources from the $clan.name camp to the wolf&#39;s den in the forest, the pack eventually regains their strength. 
 
 There is a quiet harmony between the wolves and cats, as the wolves realize the cats have more knowledge than they do of the land, while the wolves can gain more ground and protect the camp far easier.
@@ -2600,7 +2540,6 @@ After many moons, you pause for a moment. &quot;$clan.medicine.name, did we ever
 
 &quot;I... think they just ate too many tomatoes and tomato vines,&quot; $clan.medicine.name says. &quot;An easy cure-- just don&#39;t eat them.&quot;
 
-[[Fin.]]</tw-passagedata><tw-passagedata pid="121" name="Fin." tags="" position="1450,8300" size="100,100">Thanks for playing CombatFelines!
 [[Fin.]]</tw-passagedata><tw-passagedata pid="121" name="Fin." tags="" position="3025,3875" size="100,100">Thanks for playing CombatFelines!
 
 Made in Twine.
@@ -2617,7 +2556,6 @@ Audio: Meaghanne McBride (feat. Ciomara, Emily Zbyszynski)
 &lt;div class=&quot;instruction&quot;&gt;
 To replay, use the &#39;RESTART&#39; button to the left, or close the tab and open it again.
 &lt;/div&gt;
-</tw-passagedata><tw-passagedata pid="122" name="ending-fail-2" tags="" position="1525,8150" size="100,100">...It has since been many weeks since the wolf carried off all the medicine cats they could find. You&#39;ve been unsure how to protect your borders, and have resorted to keeping all cats in the camp at all times with patrols just around the camp wall.
 </tw-passagedata><tw-passagedata pid="122" name="ending-fail-2" tags="" position="3100,3725" size="100,100">...It has since been many weeks since the wolf carried off all the medicine cats they could find. You&#39;ve been unsure how to protect your borders, and have resorted to keeping all cats in the camp at all times with patrols just around the camp wall.
 
 Though, it&#39;s truly no way to live. After a few too many moons to count, $clan.medicine.name washes up on the riverbank where you spoke with the alpha wolf.
@@ -2782,7 +2720,6 @@ function checkTiles(){
   
 
 }
-&lt;/script&gt;</tw-passagedata></tw-storydata>
 &lt;/script&gt;</tw-passagedata><tw-passagedata pid="124" name="downtime1" tags="" position="3625,2775" size="100,100">You&#39;ve been a full-fledge cat member of the clan for a moon now, and tensions have been rising in the clan. 
 
 Food is short, cats are weak, and there have been definite sightings of the wolves getting closer and closer.
